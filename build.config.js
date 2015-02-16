@@ -64,10 +64,13 @@ module.exports = {
     js: [
       'vendor/angular/angular.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
+      'vendor/angular-aria/angular-aria.min.js',
+      'vendor/angular-material/angular-material.min.js',
       'vendor/angular-animate/angular-animate.min.js'
     ],
     css: [
-    
+      'vendor/angular-material/angular-material.min.css',
+      'vendor/angular-material/default-theme.css',
     ],
     assets: [
       'vendor/fontawesome/css/**',

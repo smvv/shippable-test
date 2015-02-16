@@ -1,7 +1,9 @@
 angular.module('Tacx', [
     'templates-app',
     'templates-common',
-    'ui.router'
+    'ui.router',
+    'ngAria',
+    'ngMaterial'
 ])
 
 .controller('AppCtrl', function($rootScope, $scope, $location, $window, $state) {
