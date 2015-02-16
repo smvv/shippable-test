@@ -69,8 +69,7 @@ module.exports = {
       'vendor/angular-animate/angular-animate.min.js'
     ],
     css: [
-      'vendor/angular-material/angular-material.min.css',
-      'vendor/angular-material/default-theme.css',
+      'vendor/angular-material/angular-material.min.css'
     ],
     assets: [
       'vendor/fontawesome/css/**',

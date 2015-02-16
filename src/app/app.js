@@ -6,35 +6,22 @@ angular.module('Tacx', [
     'ngMaterial'
 ])
 
-.controller('AppCtrl', function($rootScope, $scope, $location, $window, $state) {
-    $scope.$state = $state;
-
-    $scope.isActive = function(viewLocation) {
-        return viewLocation === $location.path();
-    };
+.controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.toggleLeft = function() {
+    $mdSidenav('left').toggle()
+                      .then(function(){
+                          $log.debug("toggle left is done");
+                      });
+  };
+})
+.controller('LeftCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function() {
+    $mdSidenav('left').close()
+                      .then(function(){
+                        $log.debug("close LEFT is done");
+                      });
+  };
 })
 
-.directive('resize', function ($window, $rootScope) {
-    return function(scope, element, attr) {
-        var w = angular.element($window);
-
-        scope.$watch(function() {
-            return {
-                'h': window.innerHeight,
-                'w': window.innerWidth
-            };
-        }, function(newValue, oldValue) {
-            console.log('resize to', newValue, 'from', oldValue);
-            scope.windowHeight = newValue.h;
-            scope.windowWidth = newValue.w;
-
-            scope.$eval(attr.notifier);
-        }, true);
-
-        w.bind('resize', function() {
-            scope.$apply();
-        });
-    };
-})
 
 ;
