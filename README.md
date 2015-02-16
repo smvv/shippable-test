@@ -1,6 +1,6 @@
 # Tacx-frontend
 
-Web client for Tacx Cloud
+Web client for Tacx Cloud.
 
 ## Install dependencies
 
