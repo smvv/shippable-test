@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="Tacx" ng-controller="AppCtrl">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <title ng-bind="pageTitle">Tacx</title>
+   <% styles.forEach(function(file) { %>
+   <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+   <link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome/css/font-awesome.min.css" />
+   <% scripts.forEach(function(file) { %>
+   <script type="text/javascript" src="<%= file %>"></script><% }); %>
+   <% lr.forEach(function(file) { %>
+   <script type="text/javascript" src="<%= file %>"></script><% }); %>
+</head>
+<body>
+</body>
+</html>
