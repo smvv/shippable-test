@@ -1,7 +1,9 @@
 FROM ubuntu:14.10
 MAINTAINER Arshad Ashrafi <arshad@splendo.com>
 
-RUN apt-get update && apt-get install -y nginx nodejs npm git
+RUN apt-get update && apt-get install -y nginx nodejs npm git ruby
+
+RUN gem install sass
 
 WORKDIR /frontend
 

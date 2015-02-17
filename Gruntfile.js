@@ -11,7 +11,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-conventional-changelog');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-coffeelint');
@@ -267,23 +267,25 @@ module.exports = function ( grunt ) {
     },
 
     /**
-     * `grunt-contrib-less` handles our LESS compilation and uglification automatically.
-     * Only our `main.less` file is included in compilation; all other files
+     * `grunt-contrib-sass` handles our SASS compilation and uglification automatically.
+     * Only our `main.scss` file is included in compilation; all other files
      * must be imported from this file.
      */
-    less: {
+    sass: {
       build: {
+        options: {
+          style: 'compact'
+        },
         files: {
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.less %>'
+          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.sass %>'
         }
       },
       compile: {
-        files: {
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.less %>'
-        },
         options: {
-          cleancss: true,
-          compress: true
+          style: 'compressed'
+        },
+        files: {
+          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.sass %>'
         }
       }
     },
@@ -536,9 +538,9 @@ module.exports = function ( grunt ) {
       /**
        * When the CSS files change, we need to compile and minify them.
        */
-      less: {
-        files: [ 'src/**/*.less' ],
-        tasks: [ 'less:build' ]
+      sass: {
+        files: [ 'src/**/*.scss' ],
+        tasks: [ 'sass:build' ]
       },
 
       /**
@@ -598,7 +600,7 @@ module.exports = function ( grunt ) {
     'jshint',
     'coffeelint',
     'coffee',
-    'less:build',
+    'sass:build',
     'concat:build_css',
     'copy:build_app_assets',
     'copy:build_vendor_assets',
@@ -613,7 +615,7 @@ module.exports = function ( grunt ) {
    * minifying your code.
    */
   grunt.registerTask( 'compile', [
-    'less:compile',
+    'sass:compile',
     'copy:compile_assets',
     'ngAnnotate',
     'concat:compile_js',
