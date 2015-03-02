@@ -1,7 +1,8 @@
-sudo:  false
 build_image: shippableimages/ubuntu1404_nodejs
 
 before_script:
+    - sudo apt-get update
+    - sudo apt-get install -y ruby
     - gem install sass
     - npm install
     - node node_modules/.bin/bower install --allow-root
