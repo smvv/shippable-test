@@ -1,9 +1,12 @@
+build_image: shippableimages/ubuntu1404_nodejs
+
 before_script:
-    - sudo apt-get update;
-    - sudo apt-get install docker.io;
-    - sudo groupadd docker;
-    - sudo gpasswd -a ${USER} docker;
-    - sudo service docker.io restart;
+    #    - sudo apt-get update;
+    #    - sudo apt-get install -y nginx nodejs npm git ruby
+    #    - sudo gem install sass
+    #    - sudo ln -s /usr/bin/nodejs /usr/bin/node
+    - npm install
+    - nodejs node_modules/.bin/bower install
 
 script:
-    - make test;
+    - nodejs node_modules/.bin/grunt default
