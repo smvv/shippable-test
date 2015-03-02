@@ -1,5 +1,6 @@
 build_image: shippableimages/ubuntu1404_nodejs
 commit_container: smvanveen/shippable-test
+cache: true
 
 before_script:
     - sudo apt-get update
