@@ -1,0 +1,9 @@
+before_script:
+    - sudo apt-get update;
+    - sudo apt-get install docker.io;
+    - sudo groupadd docker;
+    - sudo gpasswd -a ${USER} docker;
+    - sudo service docker.io restart;
+
+script:
+    - make test;

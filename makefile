@@ -17,8 +17,10 @@ frontend:
 	$(DOCKER) build -t $(FRONTEND_NAME) .
 	$(DOCKER) run --rm -ti -p $(FRONTEND_ADDR):80 $(FRONTEND)
 
-watch:
-	node node_modules/.bin/grunt watch
+test: FRONTEND_ARGS += -e SOURCE_TEST=1
+test: FRONTEND_ARGS += -p 9018:9018 -p 9019:9019 -p 9100:9100
+test: frontend
 
-reload:
-	node node_modules/.bin/grunt delta
+watch: FRONTEND_ARGS += -e SOURCE_WATCH=1
+watch: FRONTEND_ARGS += -p 9018:9018 -p 9019:9019 -p 9100:9100
+watch: frontend
