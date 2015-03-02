@@ -1,5 +1,4 @@
 sudo:  false
-build_image: shippableimages/ubuntu1404_nodejs
 
 before_script:
     - gem install sass
