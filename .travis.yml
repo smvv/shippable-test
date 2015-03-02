@@ -8,7 +8,6 @@ before_script:
     #    - sudo ln -s /usr/bin/nodejs /usr/bin/node
     - sudo apt-get update
     - sudo apt-get install -y ruby
-    - sudo ln -s /usr/bin/nodejs /usr/bin/node
     - gem install sass
     - npm install
     - nodejs node_modules/.bin/bower install --allow-root
