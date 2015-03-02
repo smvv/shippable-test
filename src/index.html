@@ -30,7 +30,7 @@
             <md-toolbar class="md-theme-indigo">
                <div class="md-toolbar-tools">
                   <button class="menu-icon" ng-click="toggleLeft()" hide-gt-md aria-label="Toggle Menu">
-                     <img src="assets/img/icons/ic_menu_24px.svg" />
+                     <img class="ng-isolate-scope md-default-theme" src="assets/img/icons/ic_menu_24px.svg" />
                   </button>
                   <div layout="row" flex class="fill-height">
                      <div class="md-toolbar-item md-breadcrumb">
@@ -40,11 +40,27 @@
                   </div>
                </div>
             </md-toolbar>
-            <p>
-               Lorem ipsum.
-            </p>
-         </div>
-       </md-content>
+
+            <md-content class="md-padding" hide-gt-lg>
+              Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. 
+              <md-button ng-click="showSimpleToast()">
+                Show Simple
+              </md-button>
+
+              <div layout="row">
+                <div flex class="a">
+                  [flex]
+                </div>
+                <div flex class="b">
+                  [flex]
+                </div>
+                <div flex hide-sm class="c">
+                  [flex]
+                </div>
+              </div>
+          </md-content>     
+        </div>
+      </md-content>
        
      </section>
    </div>

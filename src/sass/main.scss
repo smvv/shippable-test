@@ -1,6 +1,27 @@
+* {
+	font-family: sans-serif;
+}
+
 .menu-icon {
 	background: none;
 	border: none;
 	margin-right: 16px;
 	padding: 0;
+}
+
+.menu-icon img {
+	display: inline-block;
+	vertical-align: middle;
+	height: 24px;
+	width: 24px;
+}
+
+.a {
+	background:red;
+}
+.b {
+	background:green;
+}
+.c {
+	background:blue;
 }
