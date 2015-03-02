@@ -6,7 +6,7 @@ before_script:
     #    - sudo gem install sass
     #    - sudo ln -s /usr/bin/nodejs /usr/bin/node
     - npm install
-    - nodejs node_modules/.bin/bower install
+    - nodejs node_modules/.bin/bower install --allow-root
 
 script:
     - nodejs node_modules/.bin/grunt default
