@@ -20,6 +20,7 @@ module.exports = function ( karma ) {
     frameworks: [ 'jasmine' ],
     plugins: [
         'karma-jasmine',
+        'karma-junit-reporter',
         'karma-phantomjs-launcher',
         'karma-coffee-preprocessor'
         ],
@@ -30,7 +31,15 @@ module.exports = function ( karma ) {
     /**
      * How to report, by default.
      */
-    reporters: 'dots',
+    reporters: [
+        'dots',
+        'junit'
+    ],
+
+    junitReporter: {
+        outputFile: 'test-results.xml',
+        suite: ''
+    },
 
     /**
      * On which port should the browser connect, on which port is the test runner

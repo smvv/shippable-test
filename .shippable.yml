@@ -2,6 +2,9 @@ build_image: shippableimages/ubuntu1404_nodejs
 commit_container: smvanveen/shippable-test
 cache: true
 
+env:
+    - XUNIT_FILE=test-results.xml
+
 before_script:
     - sudo apt-get update
     - sudo apt-get install -y ruby nginx phantomjs
@@ -11,3 +14,4 @@ before_script:
 
 script:
     - node node_modules/.bin/grunt default
+    - node node_modules/.bin/grunt karmaconfig:unit karma:continuous
