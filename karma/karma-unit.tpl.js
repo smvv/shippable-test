@@ -19,12 +19,14 @@ module.exports = function ( karma ) {
     ],
     frameworks: [ 'jasmine' ],
     plugins: [
+        'karma-coverage',
         'karma-jasmine',
         'karma-junit-reporter',
         'karma-phantomjs-launcher',
         'karma-coffee-preprocessor'
         ],
     preprocessors: {
+      'src/**/*.js': ['coverage'],
       '**/*.coffee': 'coffee',
     },
 
@@ -33,12 +35,18 @@ module.exports = function ( karma ) {
      */
     reporters: [
         'dots',
+        'coverage',
         'junit'
     ],
 
     junitReporter: {
         outputFile: 'shippable/testresults/test-results.xml',
         suite: ''
+    },
+
+    coverageReporter: {
+        type : 'cobertura',
+        dir : 'shippable/codecoverage/'
     },
 
     /**
