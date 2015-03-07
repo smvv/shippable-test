@@ -37,7 +37,7 @@ module.exports = function ( karma ) {
     ],
 
     junitReporter: {
-        outputFile: 'test-results.xml',
+        outputFile: 'shippable/testresults/test-results.xml',
         suite: ''
     },
 

@@ -3,15 +3,13 @@ commit_container: smvanveen/shippable-test
 cache: true
 language: node_js
 
-env:
-    - XUNIT_FILE=test-results.xml
-
 before_script:
     - sudo apt-get update
     - sudo apt-get install -y ruby nginx phantomjs
     - gem install sass
     - npm install
     - node node_modules/.bin/bower install --allow-root
+    - mkdir -p shippable/testresults/
 
 script:
     - node node_modules/.bin/grunt default
