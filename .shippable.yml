@@ -1,6 +1,7 @@
 build_image: shippableimages/ubuntu1404_nodejs
 commit_container: smvanveen/shippable-test
 cache: true
+language: node_js
 
 env:
     - XUNIT_FILE=test-results.xml
