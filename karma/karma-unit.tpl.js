@@ -27,7 +27,7 @@ module.exports = function ( karma ) {
         ],
     preprocessors: {
       'src/**/*.js': ['coverage'],
-      '**/*.coffee': 'coffee',
+      //'**/*.coffee': 'coffee',
     },
 
     /**

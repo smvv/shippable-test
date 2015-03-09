@@ -554,7 +554,7 @@ module.exports = function ( grunt ) {
         ],
         tasks: [
             'jshint:test',
-            'karma:continuous'
+            'karma:unit:run'
             ],
         options: {
           livereload: false
